@@ -1,0 +1,105 @@
+# Common
+set password = 
+set port = 5222
+set resource = Khamsung
+set disable_random_resource = 1
+set ignore_self_presence = 0
+set tls = 1
+set lang = ru
+set help_dirs = "/usr/share/mcabber/help;~/share/mcabber/help"
+set help_to_current = 0
+
+# Aspell
+set spell_enable = 1
+set spell_lang = ru_RU
+set spell_encoding = UTF-8
+
+# History
+set cmdhistory_lines = 250
+set roster_display_filter = ofdna
+set logging = 1
+set load_logs = 1
+set logging_ignore_status = 0
+set max_history_age = 0
+set statefile = ~/.mcabber/mcabber.state
+set max_history_blocks = 8
+set log_muc_conf = 1
+set load_muc_logs = 1
+
+# Modules
+set modules_dir = /usr/lib/mcabber
+
+set escdelay = 50
+
+set color_background   = default
+set color_general      = white
+set color_info         = white
+set color_msgin        = white
+set color_msgout       = cyan
+set color_msghl        = yellow
+set color_bgstatus     = blue
+set color_status       = white
+set color_roster       = default
+set color_bgrostersel  = cyan
+set color_rostersel    = blue
+set color_rosterselmsg = red
+set color_rosternewmsg = red
+
+# You can color roster items by their status and JID.  For example, to have
+# all roster items white, just all contacts from jabber.org that are away,
+# not available or do not disturb yellow, you do this:
+color roster * * white
+color roster a * blue
+color roster n * yellow
+color roster d * red
+color roster of * green
+set roster_win_on_right = 1
+
+# Set 'url_regex' to a regular expression matching urls.  If it matches an
+# url in an incoming messages, it'll print it to the log window.
+set url_regex = "(((https?|ftps?|nntp)://)|www[.][-a-z0-9.]+|(mailto:|news:))(%[0-9A-F]{2}|[-_.!~*';/?:@&=+$,#[:alnum:]])+"
+
+
+# Aliases
+alias me = say /me
+alias online   = status online
+alias away     = status away
+alias dnd      = status dnd
+alias notavail = status notavail
+alias zzz = status notavail Zzz...
+
+
+# Key bindings
+# Ctrl-q (17) bound to /roster unread_next
+bind 17 = roster unread_next
+# Ctrl-x (24) bound to /roster alternate
+bind 24 = roster alternate
+# F5 (269) bound to /roster toggle_offline  (centericq-like, IIRC)
+bind 269 = roster toggle_offline
+# F12 (276) bound to /roster toggle
+bind 276 = roster toggle
+# Ctrl-Up/Ctrl-Down bound to /buffer up/down  (like Ctrl-p/Ctrl-n)
+bind 521 = buffer up
+bind 514 = buffer down
+
+# Sample alias to join mcabber channel with "/jmc"
+#alias jmc = room join mcabber@conf.lilotux.net
+
+set events_command = ~/.mcabber/event.sh
+set events_ignore_active_window = 0
+set event_log_files = 1
+set event_log_dir = /tmp
+
+# Traces logging
+# # If you want advanced traces, please specify a file and a level here.
+# # There are currently 4 tracelog levels:
+# #  lvl 1: most events of the log window are written to the file
+# #  lvl 2: Loudmouth verbose logging
+# #  lvl 3: debug logging (XML, etc.)
+# #  lvl 4: noisy debug logging (Loudmouth parser...)
+# # Default is level 0, no trace logging
+set tracelog_level = 1
+set tracelog_file = ~/.mcabber/mcabber.log
+
+module load urlregex
+module load fifo
